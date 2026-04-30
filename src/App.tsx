@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
@@ -13,6 +6,7 @@ import {
 } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import AppRoutes from './navigation/AppRoutes';
+import { navigationRef, onNavigationReady } from './utils/NavigationUtils';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,7 +23,7 @@ function AppContent() {
   const safeAreaInsets = useSafeAreaInsets();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef} onReady={onNavigationReady}>
       <View style={styles.container}>
         <AppRoutes />
       </View>

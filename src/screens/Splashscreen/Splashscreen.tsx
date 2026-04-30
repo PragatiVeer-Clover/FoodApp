@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { img } from '../../assets';
+import { colors } from '../../styles/colors';
 
 const Splashscreen = () => {
   return (
@@ -12,7 +13,7 @@ const Splashscreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F5CB58',
+    backgroundColor: colors.yellowBase,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
