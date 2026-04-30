@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     color: colors.orangeBase
   },
   bottomView: {
-    backgroundColor: colors.white100100,
+    backgroundColor: colors.white100,
     position: 'absolute',
     bottom: 0,
     left: 0,

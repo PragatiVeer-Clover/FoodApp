@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
         borderBottomStartRadius: RS(10),
         backgroundColor: colors.black,
         position: 'absolute',
-        top: hp(0),
-        left: (width / 4 - (width / 4) * 0.55) / 2,
+        top: 0,
+        left: (width / 5 - (width / 5) * 0.55) / 2,
     },
     pressable: {
         flex: 1,

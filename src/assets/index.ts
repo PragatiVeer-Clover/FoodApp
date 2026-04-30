@@ -1,3 +1,4 @@
+import MenuCarousel from "../screens/Home/components/MenuCarousel";
 
 
 export const img = {
@@ -9,5 +10,12 @@ export const img = {
     boy: require('./images/Boy.png'),
     fingerPrint: require('./images/Fingerprint.png'),
     google: require('./images/Google.png'),
+    MenuCarousel:require('./images/menuCarousel.png'),
+    food1:require('./images/food1.png'),
+    food2: require('./images/food2.png'),
+    food3: require('./images/food3.png'),
+    food4: require('./images/food4.png'),
+    food5: require('./images/food5.png'),
+    food6: require('./images/food6.png'),
 
 }

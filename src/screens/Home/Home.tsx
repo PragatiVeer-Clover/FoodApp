@@ -1,19 +1,24 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 
 import { colors } from '../../styles/colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Feather from '@react-native-vector-icons/feather';
 import { hp, RF, scale } from '../../styles/scaling';
 import CustomSearch from '../../components/CustomeSearch';
-import IconByVariant from '../../components/IconByVariant';
+
+import MenuList from './components/MenuList';
+import MenuCarousel from './components/MenuCarousel';
+import BestSeller from './components/BestSeller';
+import RecommendMenu from './components/RecommendMenu';
 
 const Home = () => {
+    const [search, setSearch] = React.useState('');
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.headerWrapper}>
                 <View style={styles.headerView}>
-                    <CustomSearch value={''} onChangeText={() => { }} placeholder="Search" />
+                    <CustomSearch value={search} onChangeText={setSearch} placeholder="Search" />
                     <View style={styles.cartIcon}>
                         <Feather name='shopping-cart' size={20} color={colors.orangeBase} />
                         <View style={styles.badge}>
@@ -36,7 +41,16 @@ const Home = () => {
                 </View>
             </View>
             <View style={styles.mainView}>
-                <IconByVariant name="snack" size={hp(5)} />
+                <MenuList />
+                <View style={{ height: 1, backgroundColor: colors.orange2, marginVertical: scale(16) }} />
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{ paddingBottom: scale(100) }}
+                >
+                    <MenuCarousel />
+                    <BestSeller />
+                    <RecommendMenu />
+                </ScrollView>
             </View>
         </SafeAreaView>
     )
@@ -62,66 +76,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between'
     },
-    text: {
-        fontSize: RF(24),
-        fontWeight: 'bold',
-        color: colors.white100,
-        textAlign: 'center',
-        flex: 1,
-    },
     mainView: {
-        // flex: 1,
-        backgroundColor: colors.white100,
+        backgroundColor: colors.white,
         borderTopLeftRadius: scale(30),
         borderTopRightRadius: scale(30),
         paddingHorizontal: scale(20),
         paddingVertical: scale(24),
-        height: hp(100)
-    },
-    title: {
-        fontSize: RF(20),
-        fontWeight: 'bold',
-        color: colors.black,
-        marginBottom: scale(20)
-
-    },
-    forgotPassword: {
-        fontSize: RF(12),
-        fontWeight: '600',
-        color: colors.orangeBase,
-        textAlign: 'right',
-        marginTop: scale(16),
-    },
-    signupText: {
-        fontSize: RF(14),
-        color: colors.black,
-        textAlign: 'center',
-        marginTop: scale(16),
-    },
-    signup: {
-        fontSize: RF(14),
-        fontWeight: '600',
-        color: colors.orangeBase,
-        textAlign: 'center',
-        marginTop: scale(16),
-    },
-    fingerPrint: {
-        width: scale(40),
-        height: scale(40),
-        resizeMode: 'contain',
-        marginHorizontal: scale(8),
-
-    },
-    orText: {
-        fontSize: RF(12),
-        color: colors.black,
-        textAlign: 'center',
-    },
-    row: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginVertical: scale(12)
+        flex: 1,
     },
     cartIcon: {
         width: scale(35),
@@ -179,7 +140,8 @@ const styles = StyleSheet.create({
         fontSize: RF(14),
         color: colors.orangeBase,
         marginTop: scale(2),
-    }
+    },
+
 
 });
 
