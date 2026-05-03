@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-
 import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList } from './types';
 import Splashscreen from '../screens/Splashscreen/Splashscreen';
@@ -17,6 +16,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTab from './BottomTab';
 import { bottomTabList } from '../utils/helper';
 import IconByVariant from '../components/IconByVariant';
+import Search from '../screens/Search/Search';
+import { MyDrawer } from './DrawerTab';
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
@@ -29,7 +30,7 @@ const componentMap: Record<string, React.ComponentType<any>> = {
     Help,
 };
 
-const Tabs = () => {
+export const Tabs = () => {
     return (
         <Tab.Navigator
             initialRouteName="Home"
@@ -42,7 +43,6 @@ const Tabs = () => {
             {bottomTabList.map(({ name, icon }) => {
                 const Component = componentMap[name];
                 if (!Component) return null;
-                console.log("Help data", name)
                 return (
                     <Tab.Screen
                         key={name}
@@ -73,10 +73,11 @@ const AppRoutes: FC = () => {
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Signup" component={Signup} />
             <Stack.Screen name="SetPassword" component={SetPassword} />
-            <Stack.Screen name="Home" component={Tabs} />
+            <Stack.Screen name="Home" component={MyDrawer} />
+            <Stack.Screen name="Search" component={Search} />
+            <Stack.Screen name="Menu" component={Menu} />
         </Stack.Navigator>
-
-    )
+    );
 };
 
 export default AppRoutes;

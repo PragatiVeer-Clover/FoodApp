@@ -7,12 +7,12 @@ import { openDrawer } from '../../utils/NavigationUtils';
 import { scale, RF } from '../../styles/scaling';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Orders = () => {
+const Profile = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <View style={{ width: 24 }} />
-                <Text style={styles.title}>My Orders</Text>
+                <Text style={styles.title}>My Profile</Text>
                 <TouchableOpacity onPress={() => openDrawer()}>
                     <Feather name="menu" size={24} color={colors.black} />
                 </TouchableOpacity>
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Orders;
+export default Profile;

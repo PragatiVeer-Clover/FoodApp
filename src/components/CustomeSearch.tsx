@@ -14,6 +14,7 @@ interface Props extends TextInputProps {
     placeholder?: string;
     value: string;
     onChangeText: (text: string) => void;
+    editable?: boolean;
 }
 
 const CustomSearch = forwardRef<TextInput, Props>((
@@ -22,6 +23,7 @@ const CustomSearch = forwardRef<TextInput, Props>((
         value,
         onChangeText,
         style,
+        editable,
         ...rest
     },
     ref
@@ -37,6 +39,8 @@ const CustomSearch = forwardRef<TextInput, Props>((
                 value={value}
                 onChangeText={onChangeText}
                 autoCorrect={false}
+                editable={editable}
+
                 autoComplete={Platform.OS === 'android' ? 'off' : 'one-time-code'}
                 {...rest}
             />
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
         borderRadius: scale(15),
         paddingHorizontal: scale(12),
         marginVertical: scale(10),
-        width: '60%',
+        // width: '60%',
 
     },
     icon: {

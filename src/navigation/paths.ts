@@ -1,5 +1,3 @@
-import SetPassword from "../screens/SetPassword/SetPassword";
-
 export const Paths = {
     SplashScreen: 'SplashScreen',
     Login: 'Login',
@@ -7,7 +5,9 @@ export const Paths = {
     Home: 'Home',
     Welcome: 'Welcome',
     Signup: 'Signup',
-    SetPassword: 'SetPassword'
+    SetPassword: 'SetPassword',
+    Search: 'Search',
+    Menu:'Menu'
 
 } as const;
 

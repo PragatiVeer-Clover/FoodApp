@@ -11,6 +11,9 @@ export type RootStackParamList = {
     [Paths.Welcome]: undefined;
     [Paths.Signup]: undefined;
     [Paths.SetPassword]: undefined;
+    [Paths.Search]: undefined;
+    [Paths.Menu]: undefined;
+
 };
 
 export type RootScreenProps<S extends keyof RootStackParamList = keyof RootStackParamList> = StackScreenProps<RootStackParamList, S>;

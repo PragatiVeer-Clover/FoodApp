@@ -47,7 +47,7 @@ const BestSeller = () => {
 const styles = StyleSheet.create({
   container: {
     marginVertical: hp(1),
-    width: wp(100),
+    width: wp(95),
     alignSelf: 'center',
   },
   row: {
@@ -103,13 +103,6 @@ const styles = StyleSheet.create({
   priceBadge: {
     backgroundColor: colors.orangeBase,
     paddingHorizontal: scale(10),
-    paddingVertical: scale(2),
-    borderRadius: scale(20),
-    alignSelf: 'flex-start',
-  },
-  priceBadge: {
-    backgroundColor: colors.orangeBase,
-    paddingHorizontal: scale(8),
     paddingVertical: scale(2),
     borderRadius: scale(20),
     alignSelf: 'flex-start',

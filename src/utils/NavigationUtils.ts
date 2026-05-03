@@ -2,6 +2,7 @@ import {
   createNavigationContainerRef,
   CommonActions,
   StackActions,
+  DrawerActions,
 } from '@react-navigation/native';
 
 export const navigationRef = createNavigationContainerRef();
@@ -85,5 +86,15 @@ export function push(routeName: string, params?: object) {
       StackActions.push(routeName as never, params as never),
     );
 
+  navigationRef.isReady() ? action() : enqueue(action);
+}
+
+export function openDrawer() {
+  const action = () => navigationRef.dispatch(DrawerActions.openDrawer());
+  navigationRef.isReady() ? action() : enqueue(action);
+}
+
+export function closeDrawer() {
+  const action = () => navigationRef.dispatch(DrawerActions.closeDrawer());
   navigationRef.isReady() ? action() : enqueue(action);
 }

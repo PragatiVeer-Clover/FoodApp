@@ -4,7 +4,7 @@ import { PlatformPressable } from '@react-navigation/elements';
 
 
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { wp, hp, RS, verticalScale, scale } from '../styles/scaling';
+import { wp, RS, verticalScale } from '../styles/scaling';
 import { colors } from '../styles/colors';
 import { IconKey } from '../assets/iconMap';
 import IconByVariant from '../components/IconByVariant';
@@ -46,7 +46,7 @@ const CustomBottomTab: React.FC<BottomTabBarProps> = ({
             />
             {state?.routes?.map?.((route, index) => {
                 const isFocused = state.index === index;
-                const iconColor = isFocused ? colors.black : colors.white100;
+                const iconColor = isFocused ? colors.orangeBase : colors.gray400;
                 const onPress = () => {
                     const event = navigation.emit({
                         type: 'tabPress',
@@ -97,15 +97,15 @@ const styles = StyleSheet.create({
         backgroundColor: colors.orangeBase,
         paddingVertical: verticalScale(20),
         paddingBottom: verticalScale(20),
-        borderTopLeftRadius: scale(30),
-        borderTopRightRadius: scale(30),
+        // borderTopLeftRadius: scale(30),
+        // borderTopRightRadius: scale(30),
 
     },
     indicator: {
         height: RS(3),
         borderBottomEndRadius: RS(10),
         borderBottomStartRadius: RS(10),
-        backgroundColor: colors.black,
+        backgroundColor: colors.orangeBase,
         position: 'absolute',
         top: 0,
         left: (width / 5 - (width / 5) * 0.55) / 2,

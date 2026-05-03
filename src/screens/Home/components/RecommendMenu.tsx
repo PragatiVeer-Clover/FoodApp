@@ -35,12 +35,9 @@ const RecommendMenu = () => {
 
 
                             <View style={styles.bottomSection}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={styles.foodName} numberOfLines={1}>{item.name}</Text>
-                                    <View style={styles.ratingContainer}>
-                                        <Feather name="star" size={RF(13)} color={colors.white100} />
-                                        <Text style={styles.ratingText}>{item.rating}</Text>
-                                    </View>
+                                <View style={styles.ratingContainer}>
+                                    <Feather name="star" size={RF(13)} color={colors.white100} />
+                                    <Text style={styles.ratingText}>{item.rating}</Text>
                                 </View>
                                 <View style={styles.priceBadge}>
                                     <Text style={styles.priceText}>${item.price}</Text>
@@ -58,6 +55,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         alignSelf: 'center',
+        marginBottom:wp(20)
     },
     row: {
         flexDirection: 'row',
@@ -100,51 +98,51 @@ const styles = StyleSheet.create({
     overlay: {
         flex: 1,
         padding: scale(16),
-        justifyContent: 'space-between', // Distributes space between top and bottom sections
+        justifyContent: 'space-between',
     },
     // Top Section
     topSection: {
         alignItems: 'flex-start',
     },
     foodName: {
-        fontSize: RF(14),
-        fontWeight: 'bold',
-        color: colors.white,
-        marginBottom: hp(0.5),
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 5,
+        fontSize: RF(16),
+        fontWeight: '500',
+        color: colors.black100,
+        marginBottom: hp(1),
+        width: wp(70),
     },
     ratingContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: colors.orangeBase,
         paddingHorizontal: scale(8),
-        paddingVertical: hp(0.2),
+        paddingVertical: hp(0.5),
         borderRadius: 50,
         gap: wp(1),
     },
     ratingText: {
-        fontSize: RF(11),
+        fontSize: RF(12),
         fontWeight: 'bold',
-        color: colors.white,
+        color: colors.white100,
+        marginLeft: wp(0.5),
     },
 
     bottomSection: {
         flexDirection: 'row',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         justifyContent: 'space-between',
+        // backgroundColor: 'blue'
     },
     priceBadge: {
-        backgroundColor: colors.orangeBase,
-        paddingHorizontal: scale(12),
-        paddingVertical: hp(0.4),
+        backgroundColor: colors.white100,
+        paddingHorizontal: scale(10),
+        paddingVertical: hp(0.5),
         borderRadius: 50,
     },
     priceText: {
         fontSize: RF(12),
         fontWeight: 'bold',
-        color: colors.white,
+        color: colors.black,
     },
     favButton: {
         backgroundColor: colors.white100,

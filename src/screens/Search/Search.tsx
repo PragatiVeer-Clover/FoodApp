@@ -13,7 +13,7 @@ import { Paths } from '../../navigation/paths';
 import CustomSearch from '../../components/CustomeSearch';
 import MenuList from '../Home/components/MenuList';
 
-const Menu = () => {
+const Search = () => {
     const [search, setSearch] = React.useState('');
     return (
         <SafeAreaView style={styles.container}>
@@ -127,4 +127,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Menu;
+export default Search;
